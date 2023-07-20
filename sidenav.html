@@ -53,29 +53,11 @@
 
 			color: #0C545A;
 		} */
-		.navMenu a.home:hover {
-    color: red;
+
+		.navMenu a.dynamic-hover:hover {
+    color: inherit; /* This will allow the hover color to be the same as the normal color */
 }
 
-.navMenu a.habits:hover {
-    color: blue;
-}
-
-.navMenu a.journal:hover {
-    color: green;
-}
-
-.navMenu a.exercise:hover {
-    color: yellow;
-}
-
-.navMenu a.recipe:hover {
-    color: purple;
-}
-
-.navMenu a.memory:hover {
-    color: pink;
-}
 
 	</style>
 </head>
@@ -122,34 +104,35 @@
 
 		window.onload = function() {
     let links = document.getElementsByTagName('a');
+    let hoverColor = '';
+    switch(window.location.href) {
+        case "https://www.notion.so/Home-Dashboard-29c6ddecb3f1481dab1909d45c12c78e":
+            hoverColor = 'red';
+            break;
+        case "https://www.notion.so/Habits-Mood-ced5cd4e3607467b8ba3ed38ef4adf80":
+            hoverColor = 'blue';
+            break;
+        case "https://www.notion.so/Journal-58f895406866494e879430f2fc3cf931":
+            hoverColor = 'green';
+            break;
+        case "https://www.notion.so/Workout-Planner-8d06c185cc9b4e8186c3e181999bd172":
+            hoverColor = 'yellow';
+            break;
+        case "https://www.notion.so/Recipe-Book-b074e426b5ee42b6a219811c63162141":
+            hoverColor = 'purple';
+            break;
+        case "https://www.notion.so/Flashcards-72165f2e1da54a5ba319d03e5c3715a6":
+            hoverColor = 'pink';
+            break;
+    }
+    
+    // Now add the class and set the color for each link
     for (let i = 0; i < links.length; i++) {
-        links[i].onmouseover = function() {
-            switch(window.location.href) {
-                case "https://www.notion.so/Home-Dashboard-29c6ddecb3f1481dab1909d45c12c78e":
-                    this.classList.add('home');
-                    break;
-                case "https://www.notion.so/Habits-Mood-ced5cd4e3607467b8ba3ed38ef4adf80":
-                    this.classList.add('habits');
-                    break;
-                case "https://www.notion.so/Journal-58f895406866494e879430f2fc3cf931":
-                    this.classList.add('journal');
-                    break;
-                case "https://www.notion.so/Workout-Planner-8d06c185cc9b4e8186c3e181999bd172":
-                    this.classList.add('exercise');
-                    break;
-                case "https://www.notion.so/Recipe-Book-b074e426b5ee42b6a219811c63162141":
-                    this.classList.add('recipe');
-                    break;
-                case "https://www.notion.so/Flashcards-72165f2e1da54a5ba319d03e5c3715a6":
-                    this.classList.add('memory');
-                    break;
-            }
-        }
-        links[i].onmouseout = function() {
-            this.className = this.id;  // Reset to original class on mouse out
-        }
+        links[i].classList.add('dynamic-hover');
+        links[i].style.color = hoverColor;
     }
 }
+
 
 		
 	</script>
