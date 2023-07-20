@@ -49,10 +49,34 @@
 
 		}
 
-		.navMenu a:hover {
+/* 		.navMenu a:hover {
 
 			color: #0C545A;
-		}
+		} */
+		.navMenu a.home:hover {
+    color: red;
+}
+
+.navMenu a.habits:hover {
+    color: blue;
+}
+
+.navMenu a.journal:hover {
+    color: green;
+}
+
+.navMenu a.exercise:hover {
+    color: yellow;
+}
+
+.navMenu a.recipe:hover {
+    color: purple;
+}
+
+.navMenu a.memory:hover {
+    color: pink;
+}
+
 	</style>
 </head>
 
@@ -97,13 +121,36 @@
 
 
 		window.onload = function() {
-    		if (window.location.href === "https://www.notion.so/Playground-cb34f02c4ec14634a228d66548d05293") {
-        	let links = document.getElementsByTagName('a');
-        	for (let i = 0; i < links.length; i++) {
-            	links[i].style.color = "red";
-        			}
-    			}	
-		}
+    let links = document.getElementsByTagName('a');
+    for (let i = 0; i < links.length; i++) {
+        links[i].onmouseover = function() {
+            switch(window.location.href) {
+                case "https://www.notion.so/Home-Dashboard-29c6ddecb3f1481dab1909d45c12c78e":
+                    this.classList.add('home');
+                    break;
+                case "https://www.notion.so/Habits-Mood-ced5cd4e3607467b8ba3ed38ef4adf80":
+                    this.classList.add('habits');
+                    break;
+                case "https://www.notion.so/Journal-58f895406866494e879430f2fc3cf931":
+                    this.classList.add('journal');
+                    break;
+                case "https://www.notion.so/Workout-Planner-8d06c185cc9b4e8186c3e181999bd172":
+                    this.classList.add('exercise');
+                    break;
+                case "https://www.notion.so/Recipe-Book-b074e426b5ee42b6a219811c63162141":
+                    this.classList.add('recipe');
+                    break;
+                case "https://www.notion.so/Flashcards-72165f2e1da54a5ba319d03e5c3715a6":
+                    this.classList.add('memory');
+                    break;
+            }
+        }
+        links[i].onmouseout = function() {
+            this.className = this.id;  // Reset to original class on mouse out
+        }
+    }
+}
+
 		
 	</script>
 
