@@ -62,9 +62,9 @@
 		<a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Home</a>
 		<a id="habits" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-check"></i> Habits</a>
             	<a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> Journal</a>
-            	<a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-run"></i> Exercise</a>
-            	<a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-cook"></i> Recipes</a>
-            	<a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-card"></i> Flashcards</a>
+            	<a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-bicycle"></i> Exercise</a>
+            	<a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-bowl-food"></i> Recipes</a>
+            	<a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-brain"></i> Flashcards</a>
 
 
 	</nav>
@@ -94,6 +94,17 @@
 				window.open("https://www.notion.so/Flashcards-72165f2e1da54a5ba319d03e5c3715a6", '_parent').focus();
 
 		}
+
+
+		window.onload = function() {
+    		if (window.location.href === "https://www.notion.so/Playground-cb34f02c4ec14634a228d66548d05293") {
+        	let links = document.getElementsByTagName('a');
+        	for (let i = 0; i < links.length; i++) {
+            	links[i].classList.add('red-hover');
+        			}
+    			}	
+		}
+		
 	</script>
 
 
