@@ -60,8 +60,11 @@
 
 	<nav class="navMenu  border">
 		<a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> Home</a>
-		<a id="habits" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-check"></i> Home</a>
-            <a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> Home</a>
+		<a id="habits" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-check"></i> Habits</a>
+            	<a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> Journal</a>
+            	<a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-run"></i> Exercise</a>
+            	<a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-cook"></i> Recipes</a>
+            	<a id="journal" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-card"></i> Flashcards</a>
 
 
 	</nav>
@@ -79,10 +82,16 @@
 
 			if (id == 'home')
 				window.open("https://www.notion.so/Home-Dashboard-29c6ddecb3f1481dab1909d45c12c78e", '_parent').focus();
-			else if (id == "inbox")
+			else if (id == "habits")
 				window.open("https://www.notion.so/Habits-Mood-ced5cd4e3607467b8ba3ed38ef4adf80", '_parent').focus();
-			else if (id == "week")
+			else if (id == "journal")
 				window.open("https://www.notion.so/Journal-58f895406866494e879430f2fc3cf931", '_parent').focus();
+			else if (id == "exercise")
+				window.open("https://www.notion.so/Workout-Planner-8d06c185cc9b4e8186c3e181999bd172", '_parent').focus();
+			else if (id == "recipe")
+				window.open("https://www.notion.so/Recipe-Book-b074e426b5ee42b6a219811c63162141", '_parent').focus();
+			else if (id == "memory")
+				window.open("https://www.notion.so/Flashcards-72165f2e1da54a5ba319d03e5c3715a6", '_parent').focus();
 
 		}
 	</script>
