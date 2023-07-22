@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #191919;
+      }
+
+      .card {
+        width: 90%;
+        max-width: 470px;
+        /* background: linear-gradient(135deg, #00feba, #5b548a); */
+        background: linear-gradient(135deg, #5E828F, #4A6670);
+        /* background: #3f768a; */
+        color: #fff;
+        margin: 100px auto 0;
+        border-radius: 20px;
+        padding: 40px 35px;
+        text-align: center;
+      }
+
+      .search {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .search input {
+        border: 0;
+        outline: 0;
+        background: #ebfffc;
+        color: #555;
+        padding: 10px 25px;
+        height: 60px;
+        border-radius: 30px;
+        flex: 1;
+        margin-right: 16px;
+        font-size: 18px;
+      }
+
+      .search button {
+        border: 0;
+        outline: 0;
+        background: #ebfffc;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+      }
+
+      .search button img {
+        width: 16px;
+      }
+
+      .weather-icon {
+        width: 170px;
+        margin-top: 30px;
+      }
+
+      .weather h1 {
+        font-size: 80px;
+        font-weight: 500;
+      }
+
+      .weather h2 {
+        font-size: 45px;
+        font-weight: 400;
+        margin-top: -10px;
+      }
+
+      .details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        margin-top: 50px;
+      }
+
+      .col {
+        display: flex;
+        align-items: center;
+        text-align: left;
+      }
+
+      .col img {
+        width: 40px;
+        margin-right: 10px;
+      }
+
+      .humidity, .wind {
+        font-size: 28px;
+        margin-top: -6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="search">
+        <input
+          type="text"
+          spellcheck="false"
+          placeholder="Search for a city..."
+        />
+        <button><img src="images/search.png" alt="search icon" /></button>
+      </div>
+      <div class="weather">
+        <img src="images/stormy.png" alt="cloudy" class="weather-icon" />
+        <h1 class="temp">22°F</h1>
+        <h2 class="city">Tuscaloosa</h2>
+        <div class="details">
+          <div class="col">
+            <img
+              src="data:image/svg+xml,%3csvg stroke-width='1.5' id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cdefs%3e%3cstyle%3e.cls-512qihgmgperry2tus7jw-1%7bfill:none%3bstroke:white%3bstroke-miterlimit:10%3b%3b%7d%3c/style%3e%3c/defs%3e%3cpath class='cls-512qihgmgperry2tus7jw-1' d='M.5 3.4c1.92 0 1.92.95 3.83.95s1.92-.95 3.83-.95 1.92.95 3.83.95 1.92-.95 3.83-.95 1.92.95 3.84.95 1.92-.95 3.84-.95'/%3e%3cpath class='cls-512qihgmgperry2tus7jw-1' d='M.5 9.15c1.92 0 1.92.95 3.83.95s1.92-.95 3.83-.95 1.92.95 3.83.95 1.92-.95 3.83-.95 1.92.95 3.84.95 1.92-.95 3.84-.95'/%3e%3cpath class='cls-512qihgmgperry2tus7jw-1' d='M.5 14.9c1.92 0 1.92.95 3.83.95s1.92-.95 3.83-.95 1.92.95 3.83.95 1.92-.95 3.83-.95 1.92.95 3.84.95 1.92-.95 3.84-.95'/%3e%3cpath class='cls-512qihgmgperry2tus7jw-1' d='M.5 20.65c1.92 0 1.92 1 3.83 1s1.92-1 3.83-1 1.92 1 3.83 1 1.92-1 3.83-1 1.92 1 3.84 1 1.92-1 3.84-1'/%3e%3c/svg%3e"
+              alt="humidity"
+            />
+            <div>
+              <p class="humidity">50%</p>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="col">
+            <img
+              src="data:image/svg+xml,%3csvg stroke-width='1.5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='white' fill='none' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3e%3cpath d='M5 8h8.5a2.5 2.5 0 1 0-2.34-3.24'/%3e%3cpath d='M3 12h15.5a2.5 2.5 0 1 1-2.34 3.24'/%3e%3cpath d='M4 16h5.5a2.5 2.5 0 1 1-2.34 3.24'/%3e%3c/svg%3e"
+              alt="humidity"
+            />
+            <div>
+              <p class="wind">15 mp/h</p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        const apiKey = "4e55a0da473a718bc0b45d00ffe1f6e0";
+        const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=";
+        
+        const searchBox = document.querySelector(".search input");
+        const searchBtn = document.querySelector(".search button");
+        
+        // checkWeather(city);
+
+        async function checkWeather(city) {
+            const response = await fetch(apiURL + city + `&appid=${apiKey}`);
+            var data = await response.json();
+
+            console.log(data);
+
+            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°F";
+            document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+            document.querySelector(".wind").innerHTML = data.wind.speed + " mp/h";
+            document.querySelector(".weather-icon").src = "images/" + data.weather[0].main.toLowerCase() + ".png";
+            //document.querySelector(".weather-icon").src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+        }
+
+        searchBtn.addEventListener("click", () => {
+            var city = searchBox.value;
+            checkWeather(city);
+        });
+
+        const loadCity = "Tuscaloosa"
+        window.onload = checkWeather(loadCity);
+    </script>
+
+  </body>
+</html>
