@@ -162,7 +162,7 @@
             document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°F";
             document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
             document.querySelector(".wind").innerHTML = data.wind.speed + " mp/h";
-            document.querySelector(".weather-icon").src = "images/" + data.weather[0].main.toLowerCase() + ".png";
+            document.querySelector(".weather-icon").src = "https://cdawg3.github.io/notion_widgets/images/" + data.weather[0].main.toLowerCase() + ".png";
             //document.querySelector(".weather-icon").src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
         }
 
